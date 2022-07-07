@@ -17,6 +17,8 @@ import { useProductLink } from 'src/sdk/product/useProductLink'
 import type { ProductSummary_ProductFragment } from '@generated/graphql'
 import styles from 'src/components/product/ProductCard/product-card.module.scss'
 
+import WishlistButton from '../WishlistButton'
+
 type Variant = 'wide' | 'default'
 
 export interface ProductCardProps {
@@ -77,6 +79,7 @@ function ProductCard({
             <Link {...linkProps} title={name}>
               {name}
             </Link>
+            <WishlistButton sku={sku} />
           </h3>
           <div data-fs-product-card-prices>
             <Price
